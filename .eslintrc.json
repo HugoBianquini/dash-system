@@ -43,7 +43,8 @@
           "react-hooks/exhaustive-deps": "warn",
           "@typescript-eslint/explicit-module-boundary-types": "off",
           "react/react-in-jsx-scope": "off",
-          "react/jsx-props-no-spreading": "off"
+          "react/jsx-props-no-spreading": "off",
+          "react/require-default-props": "off"
       },
       "settings": {
         "react": {

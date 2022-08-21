@@ -33,10 +33,10 @@ export default function UserList() {
   return (
     <Box>
       <Header />
-      <Flex w="100%" my="6" maxW={1480} mx="auto" px="6">
+      <Flex w="100%" my="6" maxW={1480} mx="auto" px={['4', '6']}>
         <Sidebar />
 
-        <Box flex="1" borderRadius={8} bg="gray.800" p="8">
+        <Box flex="1" borderRadius={8} bg="gray.800" p={['6', '8']}>
           <Flex mb="8" justify="space-between" align="center">
             <Heading size="lg" fontWeight="normal">
               Usuários
@@ -74,8 +74,12 @@ export default function UserList() {
                       <Checkbox colorScheme="pink" />
                     </Th>
                     <Th>Usuário</Th>
-                    {isDesktop && <Th> Data de cadastro</Th>}
-                    <Th width="8" />
+                    {isDesktop && (
+                      <>
+                        <Th> Data de cadastro</Th>
+                        <Th width="8" />
+                      </>
+                    )}
                   </Tr>
                 </Thead>
                 <Tbody>
@@ -93,8 +97,9 @@ export default function UserList() {
                         </Box>
                       </Td>
                       {isDesktop && <Td>{user.createdAt}</Td>}
-                      <Td>
-                        {isDesktop && (
+
+                      {isDesktop && (
+                        <Td>
                           <Button
                             as="a"
                             size="sm"
@@ -104,8 +109,8 @@ export default function UserList() {
                           >
                             Editar
                           </Button>
-                        )}
-                      </Td>
+                        </Td>
+                      )}
                     </Tr>
                   ))}
                 </Tbody>
